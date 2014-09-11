@@ -1,5 +1,11 @@
 import java.util.*;
 
+
+/**
+ * @author  Samy Abidib
+ * @author  Sarmad Hashmi
+ * @version  September 2014
+ */
 class PointCPDesign2Performance{
 
 
@@ -34,6 +40,8 @@ class PointCPDesign2Performance{
 
 		double[] rhos = new double[numberOfObjectsPerDesign]; 
 		double[] thetas = new double[numberOfObjectsPerDesign]; 
+
+
 
 
 		//Generate the values to be used for the points construction

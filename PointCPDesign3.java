@@ -8,9 +8,11 @@
  * them into the other type. It is not an optimal design, it is used
  * only to illustrate some design issues.
  *
+ * @author Samy Abidib
+ * @author Sarmad Hashmi
  * @author Fran&ccedil;ois B&eacute;langer
  * @author Dr Timothy C. Lethbridge
- * @version July 2000
+ * @version September 2014
  */
 public class PointCPDesign3
 {

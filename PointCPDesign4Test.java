@@ -6,6 +6,8 @@ import java.io.*;
  *
  * @author Sarmad Hashmi
  * @author Samy Abidib
+ * @author Fran&ccedil;ois B&eacute;langer
+ * @author Dr Timothy C. Lethbridge
  * @version September 2014
  */
 public class PointCPTest4

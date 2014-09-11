@@ -1,9 +1,11 @@
 import java.util.*;
 
-// reusing code from Samy's PointCPDesign2Performance.java
-// added min/max times and made it compatible with design4
 
-
+/**
+ * @author Sarmad Hashmi
+ * @author Samy Abidib
+ * @version  September 2014
+ */
 class PointCPDesign4Performance{
 
 
