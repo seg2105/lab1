@@ -55,8 +55,12 @@ class PointCPDesign2Performance{
 		 * ******************* TIMING
 		 */
 
+	
 		double sum;
 		double time;
+		long maxTime = 0;
+		long minTime = 0;		
+		boolean firstTime = true;
 		/*Constructor*/
 
 		sum = 0;
@@ -64,74 +68,149 @@ class PointCPDesign2Performance{
 			long s = System.nanoTime();
 				pointObjects[i] = new PointCPDesign2(rhos[i],thetas[i]);	
 			long e = System.nanoTime();
-			sum += (e-s);
+			long timeTaken = e-s;					
+			if (firstTime) {
+				maxTime = timeTaken;
+				minTime = timeTaken;				
+				firstTime = false;
+			}
+			else if (timeTaken > maxTime) {
+				maxTime = timeTaken;
+			}
+			else if (timeTaken < minTime) {
+				minTime = timeTaken;
+			}
+			sum += (e-s);			
 		}
 
 		time = sum/(pointObjects.length);
 
-		System.out.println("Constructor: PointCPDesign2(doouble rho, double theta) takes an average of "+time+"ns per operations");
+		System.out.println("Constructor: PointCPDesign2(doouble rho, double theta, double x, double y) takes an average of "+time+"ns per operation. MAX: "+maxTime+"ns, MIN: "+minTime+"ns");
 
 		/*GetX*/
 
 		sum = 0;
+		maxTime = 0;
+		minTime = 0;
+		firstTime = true;
 		for(int i = 0; i < pointObjects.length ;i++){
 			long s = System.nanoTime();
 				pointObjects[i].getX();	
 			long e = System.nanoTime();
+			long timeTaken = e-s;
+			if (firstTime) {
+				maxTime = timeTaken;
+				minTime = timeTaken;
+				firstTime = false;
+			}
+			else if (timeTaken > maxTime) {
+				maxTime = timeTaken;
+			}
+			else if (timeTaken < minTime) {
+				minTime = timeTaken;
+			}
 			sum += (e-s);
 		}
 
 		time = sum/(pointObjects.length);
 
-		System.out.println("Method: getX() takes an average of "+time+"ns per operations");
+		System.out.println("Method: getX() takes an average of "+time+"ns per operation. MAX: "+maxTime+"ns, MIN: "+minTime+"ns");
 
 		/*GetY*/
 
 		sum = 0;
+		maxTime = 0;
+		minTime = 0;
+		firstTime = true;
 		for(int i = 0; i < pointObjects.length ;i++){
 			long s = System.nanoTime();
 				pointObjects[i].getY();	
 			long e = System.nanoTime();
+			long timeTaken = e-s;
+			if (firstTime) {
+				maxTime = timeTaken;
+				minTime = timeTaken;
+				firstTime = false;
+			}
+			else if (timeTaken > maxTime) {
+				maxTime = timeTaken;
+			}
+			else if (timeTaken < minTime) {
+				minTime = timeTaken;
+			}
 			sum += (e-s);
 		}
 
 		time = sum/(pointObjects.length);
 
-		System.out.println("Method: getY() takes an average of "+time+"ns per operations");
+		System.out.println("Method: getY() takes an average of "+time+"ns per operation. MAX: "+maxTime+"ns, MIN: "+minTime+"ns");
 
 		/*GetRho*/
 
 		sum = 0;
+		maxTime = 0;
+		minTime = 0;
+		firstTime = true;
 		for(int i = 0; i < pointObjects.length ;i++){
 			long s = System.nanoTime();
 				pointObjects[i].getRho();	
 			long e = System.nanoTime();
+			long timeTaken = e-s;
+			if (firstTime) {
+				maxTime = timeTaken;
+				minTime = timeTaken;
+				firstTime = false;
+			}
+			else if (timeTaken > maxTime) {
+				maxTime = timeTaken;
+			}
+			else if (timeTaken < minTime) {
+				minTime = timeTaken;
+			}
 			sum += (e-s);
 		}
 
 		time = sum/(pointObjects.length);
 
-		System.out.println("Method: getRho() takes an average of "+time+"ns per operations");
+		System.out.println("Method: getRho() takes an average of "+time+"ns per operations. MAX: "+maxTime+"ns, MIN: "+minTime+"ns");
 
 		/*GetTheta*/
 
 		sum = 0;
+		maxTime = 0;
+		minTime = 0;
+		firstTime = true;
 		for(int i = 0; i < pointObjects.length ;i++){
 			long s = System.nanoTime();
 				pointObjects[i].getTheta();	
 			long e = System.nanoTime();
+			long timeTaken = e-s;
+			if (firstTime) {
+				maxTime = timeTaken;
+				minTime = timeTaken;
+				firstTime = false;
+			}
+			else if (timeTaken > maxTime) {
+				maxTime = timeTaken;
+			}
+			else if (timeTaken < minTime) {
+				minTime = timeTaken;
+			}
 			sum += (e-s);
 		}
 
 		time = sum/(pointObjects.length);
 
-		System.out.println("Method: getTheta() takes an average of "+time+"ns per operations");
+		System.out.println("Method: getTheta() takes an average of "+time+"ns per operation. MAX: "+maxTime+"ns, MIN: "+minTime+"ns");
 
 
 		/*getDistance*/
 
 
 		sum = 0;
+		maxTime = 0;
+		minTime = 0;
+		firstTime = true;
 		for(int i = 0; i < pointObjects.length;i++){
 			//We get a random vector from our pool of random vectors
 			PointCPDesign2 j = pointObjects[rand.nextInt(pointObjects.length)];
@@ -139,28 +218,56 @@ class PointCPDesign2Performance{
 			long s = System.nanoTime();
 				pointObjects[i].getDistance(j);	
 			long e = System.nanoTime();
+			long timeTaken = e-s;
+			if (firstTime) {
+				maxTime = timeTaken;
+				minTime = timeTaken;
+				firstTime = false;
+			}
+			else if (timeTaken > maxTime) {
+				maxTime = timeTaken;
+			}
+			else if (timeTaken < minTime) {
+				minTime = timeTaken;
+			}
 			sum += (e-s);
 		}
 
 		time = sum/(pointObjects.length);
 
-		System.out.println("Method: getDistance() takes an average of "+time+"ns per operations");
+		System.out.println("Method: getDistance() takes an average of "+time+"ns per operation. MAX: "+maxTime+"ns, MIN: "+minTime+"ns");
 
 
 		/*rotatePoint*/
 		sum = 0;
+		maxTime = 0;
+		minTime = 0;
+		firstTime = true;
 		for(int i = 0; i < pointObjects.length;i++){
 			//We get a random theta from our pool of random vectors
 			double theta = pointObjects[rand.nextInt(pointObjects.length)].getTheta();
 			long s = System.nanoTime();
 				pointObjects[i].rotatePoint(theta);	
 			long e = System.nanoTime();
+			long timeTaken = e-s;
+			if (firstTime) {
+				maxTime = timeTaken;
+				minTime = timeTaken;
+				firstTime = false;
+			}
+			else if (timeTaken > maxTime) {
+				maxTime = timeTaken;
+			}
+			else if (timeTaken < minTime) {
+				minTime = timeTaken;
+			}
 			sum += (e-s);
 		}
 
 		time = sum/(pointObjects.length);
 
-		System.out.println("Method: rotatePoint() takes an average of "+time+"ns per operations");
+		System.out.println("Method: rotatePoint() takes an average of "+time+"ns per operation. MAX: "+maxTime+"ns, MIN: "+minTime+"ns");
+
 
 
 	}

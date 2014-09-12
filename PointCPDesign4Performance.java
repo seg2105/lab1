@@ -4,7 +4,7 @@ import java.util.*;
 /**
  * @author Sarmad Hashmi
  * @author Samy Abidib
- * @version  September 2014
+ * @version  September 2014		
  */
 class PointCPDesign4Performance{
 
@@ -16,7 +16,7 @@ class PointCPDesign4Performance{
 		 * Constants
 		 */
 		
-		//Going higher than 10000000 might get a memory out of bounds error...
+		//Going higher than 10000000 might get a memory allocation error...
 		
 		int numberOfObjectsPerDesign = 10000000;
 		

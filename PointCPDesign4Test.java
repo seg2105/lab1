@@ -10,7 +10,7 @@ import java.io.*;
  * @author Dr Timothy C. Lethbridge
  * @version September 2014
  */
-public class PointCPTest4
+public class PointCPDesign4Test
 {
   //Class methods *****************************************************
 
