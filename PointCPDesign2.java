@@ -1,13 +1,10 @@
 /**
- * This class contains instances of coordinates in either polar or
- * cartesian format.  It also provides the utilities to convert
- * them into the other type. It is not an optimal design, it is used
- * only to illustrate some design issues.
+ * SEG2105 B - Assignment 1: Design 2
+ * This class contains instances of coordinates in polar format.
+ * This is Design #2.
  *
- * @author Samy Abidib
- * @author Sarmad Hasmi
- * @author Fran&ccedil;ois B&eacute;langer
- * @author Dr Timothy C. Lethbridge
+ * @author Samy Abidib (#)
+ * @author Sarmad Hashmi (7249729)
  * @version September 2014
  */
 public class PointCPDesign2
@@ -59,6 +56,23 @@ public class PointCPDesign2
   {
     return theta;
   }
+  
+  /**
+   * Converts Cartesian coordinates to Polar coordinates.
+   */
+  public void convertStorageToPolar()
+  {
+	  return;
+  }
+	
+  /**
+   * Converts Polar coordinates to Cartesian coordinates.
+   */
+  public void convertStorageToCartesian()
+  {
+	  return;
+  }
+  
   /**
    * Calculates the distance in between two points using the Pythagorean
    * theorem  (C ^ 2 = A ^ 2 + B ^ 2). Not needed until E2.30.

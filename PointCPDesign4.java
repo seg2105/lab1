@@ -1,9 +1,10 @@
 /**
+ * SEG2105 B - Assignment 1: Design 4
  * This class contains instances of coordinates in both polar and
- * cartesian format. This is Design #4.
+ * Cartesian format. This is Design #4.
  * 
- * @author Sarmad Hashmi
- * @author Samy Abidib
+ * @author Sarmad Hashmi (7249729)
+ * @author Samy Abidib (#)
  * @version September 2014
  */
 public class PointCPDesign4
@@ -121,9 +122,12 @@ public class PointCPDesign4
     double radRotation = Math.toRadians(rotation);
     double X = getX();
     double Y = getY();
+    // get new x and y values after rotation
     double newX = (Math.cos(radRotation) * X) - (Math.sin(radRotation) * Y);
     double newY =  (Math.sin(radRotation) * X) + (Math.cos(radRotation) * Y); 
-        
+    
+    
+    // return the newly rotated point after converting the new (x,y) to corresponding rho and theta
     return new PointCPDesign4(
     		Math.sqrt(Math.pow(newX, 2) + Math.pow(newY, 2)),
 			Math.toDegrees(Math.atan2(newY, newX)),

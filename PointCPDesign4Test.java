@@ -1,11 +1,12 @@
 import java.io.*;
 
 /**
+ * SEG2105 B - Assignment 1: Design 4 Test
  * This class prompts the user for a set of coordinates, and then 
  * converts them from polar to cartesian or vice-versa.
  *
- * @author Sarmad Hashmi
- * @author Samy Abidib
+ * @author Sarmad Hashmi (7249729)
+ * @author Samy Abidib (#)
  * @author Fran&ccedil;ois B&eacute;langer
  * @author Dr Timothy C. Lethbridge
  * @version September 2014
