@@ -1,8 +1,6 @@
 /**
- * This class contains instances of coordinates in either polar or
- * cartesian format.  It also provides the utilities to convert
- * them into the other type. It is not an optimal design, it is used
- * only to illustrate some design issues.
+ * This is Design#2. The class stores polar coordinates and computes cartesian coordinates.
+ * therefore it is optimized for polar coordinates calculation.
  *
  * @author Samy Abidib
  * @author Sarmad Hasmi

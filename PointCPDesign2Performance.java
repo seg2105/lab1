@@ -65,9 +65,9 @@ class PointCPDesign2Performance{
 
 		sum = 0;
 		for(int i = 0; i < pointObjects.length ;i++){
-			long s = System.nanoTime();
+			long s = System.currentTimeMillis();
 				pointObjects[i] = new PointCPDesign2(rhos[i],thetas[i]);	
-			long e = System.nanoTime();
+			long e = System.currentTimeMillis();
 			long timeTaken = e-s;					
 			if (firstTime) {
 				maxTime = timeTaken;
@@ -83,9 +83,9 @@ class PointCPDesign2Performance{
 			sum += (e-s);			
 		}
 
-		time = sum/(pointObjects.length);
+		time = sum/(pointObjects.length)/1000;
 
-		System.out.println("Constructor: PointCPDesign2(doouble rho, double theta, double x, double y) takes an average of "+time+"ns per operation. MAX: "+maxTime+"ns, MIN: "+minTime+"ns");
+		System.out.println("Constructor: PointCPDesign2(double rho, double theta, double x, double y) takes an average of "+time+" miliseconds per operation. MAX: "+maxTime+" miliseconds, MIN: "+minTime+" miliseconds");
 
 		/*GetX*/
 
@@ -94,9 +94,9 @@ class PointCPDesign2Performance{
 		minTime = 0;
 		firstTime = true;
 		for(int i = 0; i < pointObjects.length ;i++){
-			long s = System.nanoTime();
+			long s = System.currentTimeMillis();
 				pointObjects[i].getX();	
-			long e = System.nanoTime();
+			long e = System.currentTimeMillis();
 			long timeTaken = e-s;
 			if (firstTime) {
 				maxTime = timeTaken;
@@ -112,9 +112,9 @@ class PointCPDesign2Performance{
 			sum += (e-s);
 		}
 
-		time = sum/(pointObjects.length);
+		time = sum/(pointObjects.length)/1000;
 
-		System.out.println("Method: getX() takes an average of "+time+"ns per operation. MAX: "+maxTime+"ns, MIN: "+minTime+"ns");
+		System.out.println("Method: getX() takes an average of "+time+" miliseconds per operation. MAX: "+maxTime+" miliseconds, MIN: "+minTime+" miliseconds");
 
 		/*GetY*/
 
@@ -123,9 +123,9 @@ class PointCPDesign2Performance{
 		minTime = 0;
 		firstTime = true;
 		for(int i = 0; i < pointObjects.length ;i++){
-			long s = System.nanoTime();
+			long s = System.currentTimeMillis();
 				pointObjects[i].getY();	
-			long e = System.nanoTime();
+			long e = System.currentTimeMillis();
 			long timeTaken = e-s;
 			if (firstTime) {
 				maxTime = timeTaken;
@@ -141,9 +141,9 @@ class PointCPDesign2Performance{
 			sum += (e-s);
 		}
 
-		time = sum/(pointObjects.length);
+		time = sum/(pointObjects.length)/1000;
 
-		System.out.println("Method: getY() takes an average of "+time+"ns per operation. MAX: "+maxTime+"ns, MIN: "+minTime+"ns");
+		System.out.println("Method: getY() takes an average of "+time+" miliseconds per operation. MAX: "+maxTime+" miliseconds, MIN: "+minTime+" miliseconds");
 
 		/*GetRho*/
 
@@ -152,9 +152,9 @@ class PointCPDesign2Performance{
 		minTime = 0;
 		firstTime = true;
 		for(int i = 0; i < pointObjects.length ;i++){
-			long s = System.nanoTime();
+			long s = System.currentTimeMillis();
 				pointObjects[i].getRho();	
-			long e = System.nanoTime();
+			long e = System.currentTimeMillis();
 			long timeTaken = e-s;
 			if (firstTime) {
 				maxTime = timeTaken;
@@ -170,9 +170,9 @@ class PointCPDesign2Performance{
 			sum += (e-s);
 		}
 
-		time = sum/(pointObjects.length);
+		time = sum/(pointObjects.length)/1000;
 
-		System.out.println("Method: getRho() takes an average of "+time+"ns per operations. MAX: "+maxTime+"ns, MIN: "+minTime+"ns");
+		System.out.println("Method: getRho() takes an average of "+time+" miliseconds per operatio miliseconds. MAX: "+maxTime+" miliseconds, MIN: "+minTime+" miliseconds");
 
 		/*GetTheta*/
 
@@ -181,9 +181,9 @@ class PointCPDesign2Performance{
 		minTime = 0;
 		firstTime = true;
 		for(int i = 0; i < pointObjects.length ;i++){
-			long s = System.nanoTime();
+			long s = System.currentTimeMillis();
 				pointObjects[i].getTheta();	
-			long e = System.nanoTime();
+			long e = System.currentTimeMillis();
 			long timeTaken = e-s;
 			if (firstTime) {
 				maxTime = timeTaken;
@@ -199,9 +199,9 @@ class PointCPDesign2Performance{
 			sum += (e-s);
 		}
 
-		time = sum/(pointObjects.length);
+		time = sum/(pointObjects.length)/1000;
 
-		System.out.println("Method: getTheta() takes an average of "+time+"ns per operation. MAX: "+maxTime+"ns, MIN: "+minTime+"ns");
+		System.out.println("Method: getTheta() takes an average of "+time+" miliseconds per operation. MAX: "+maxTime+" miliseconds, MIN: "+minTime+" miliseconds");
 
 
 		/*getDistance*/
@@ -215,9 +215,9 @@ class PointCPDesign2Performance{
 			//We get a random vector from our pool of random vectors
 			PointCPDesign2 j = pointObjects[rand.nextInt(pointObjects.length)];
 
-			long s = System.nanoTime();
+			long s = System.currentTimeMillis();
 				pointObjects[i].getDistance(j);	
-			long e = System.nanoTime();
+			long e = System.currentTimeMillis();
 			long timeTaken = e-s;
 			if (firstTime) {
 				maxTime = timeTaken;
@@ -233,9 +233,9 @@ class PointCPDesign2Performance{
 			sum += (e-s);
 		}
 
-		time = sum/(pointObjects.length);
+		time = sum/(pointObjects.length)/1000;
 
-		System.out.println("Method: getDistance() takes an average of "+time+"ns per operation. MAX: "+maxTime+"ns, MIN: "+minTime+"ns");
+		System.out.println("Method: getDistance() takes an average of "+time+" miliseconds per operation. MAX: "+maxTime+" miliseconds, MIN: "+minTime+" miliseconds");
 
 
 		/*rotatePoint*/
@@ -246,9 +246,9 @@ class PointCPDesign2Performance{
 		for(int i = 0; i < pointObjects.length;i++){
 			//We get a random theta from our pool of random vectors
 			double theta = pointObjects[rand.nextInt(pointObjects.length)].getTheta();
-			long s = System.nanoTime();
+			long s = System.currentTimeMillis();
 				pointObjects[i].rotatePoint(theta);	
-			long e = System.nanoTime();
+			long e = System.currentTimeMillis();
 			long timeTaken = e-s;
 			if (firstTime) {
 				maxTime = timeTaken;
@@ -264,9 +264,9 @@ class PointCPDesign2Performance{
 			sum += (e-s);
 		}
 
-		time = sum/(pointObjects.length);
+		time = sum/(pointObjects.length)/1000;
 
-		System.out.println("Method: rotatePoint() takes an average of "+time+"ns per operation. MAX: "+maxTime+"ns, MIN: "+minTime+"ns");
+		System.out.println("Method: rotatePoint() takes an average of "+time+" miliseconds per operation. MAX: "+maxTime+" miliseconds, MIN: "+minTime+" miliseconds");
 
 
 
