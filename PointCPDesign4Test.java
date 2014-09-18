@@ -1,11 +1,16 @@
+// This file contains material supporting section 2.9 of the textbook:
+// "Object Oriented Software Engineering" and is issued under the open-source
+// license found at www.lloseng.com 
+
 import java.io.*;
 
 /**
+ * SEG2105 B - Assignment 1: Design 4 Test
  * This class prompts the user for a set of coordinates, and then 
  * converts them from polar to cartesian or vice-versa.
  *
- * @author Sarmad Hashmi
- * @author Samy Abidib
+ * @author Sarmad Hashmi (7249729)
+ * @author Samy Abidib (#)
  * @author Fran&ccedil;ois B&eacute;langer
  * @author Dr Timothy C. Lethbridge
  * @version September 2014
@@ -39,28 +44,9 @@ public class PointCPDesign4Test
     // If he did not, prompt the user for them.
     try
     {
-    	char coordType = args[0].toUpperCase().charAt(0);
-    	double tempXOrRho = Double.valueOf(args[1]).doubleValue();
-    	double tempYOrTheta = Double.valueOf(args[2]).doubleValue();
-    	if (coordType == 'P') {
-    		 point = new PointCPDesign4(
-    				 tempXOrRho,
-    				 tempYOrTheta,
-    				 (Math.cos(Math.toRadians(tempYOrTheta)) * tempXOrRho),
-    				 (Math.sin(Math.toRadians(tempYOrTheta)) * tempXOrRho)
-    				 );
-    	} 
-    	else {
-    		point = new PointCPDesign4
-    				(
-    				Math.sqrt(Math.pow(tempXOrRho, 2) + Math.pow(tempYOrTheta, 2)),
-    				Math.toDegrees(Math.atan2(tempYOrTheta, tempXOrRho)),    				
-    				tempXOrRho,
-    				tempYOrTheta
-   				 );
-    	}
-             
-       
+      point = new PointCPDesign4(args[0].toUpperCase().charAt(0), 
+        Double.valueOf(args[1]).doubleValue(), 
+        Double.valueOf(args[2]).doubleValue());
     }
     catch(Exception e)
     {
@@ -79,7 +65,7 @@ public class PointCPDesign4Test
         return;
       }
     }
-    System.out.println("\nYou entered:\n" + point);    
+    System.out.println("\nYou entered:\n" + point);
   }
 
   /**
@@ -157,7 +143,6 @@ public class PointCPDesign4Test
               a = Double.valueOf(theInput).doubleValue();
             else
               b = Double.valueOf(theInput).doubleValue();
-        	
           }
         }
         catch(Exception e)
@@ -171,26 +156,6 @@ public class PointCPDesign4Test
       isOK = false;
     }
     //Return a new PointCP object
-    PointCPDesign4 point;
-    if (coordType == 'P') {
-    	// convert rho,theta values to (x,y) and create an instance
-		 point = new PointCPDesign4(
-				 a,
-				 b,
-				 (Math.cos(Math.toRadians(b)) * a),
-				 (Math.sin(Math.toRadians(b)) * a)
-				 );
-	} 
-	else {	
-		// convert (x,y) to rho, theta and create an instance
-		point = new PointCPDesign4
-				(
-				Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2)),
-				Math.toDegrees(Math.atan2(b, a)),    				
-				a,
-				b
-				 );		
-	}
-    return point;
+    return (new PointCPDesign4(coordType, a, b));
   }
 }
