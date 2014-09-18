@@ -10,7 +10,7 @@ import java.io.*;
  * converts them from polar to cartesian or vice-versa.
  *
  * @author Sarmad Hashmi (7249729)
- * @author Samy Abidib (#)
+ * @author Samy Abidib (6909624)
  * @author Fran&ccedil;ois B&eacute;langer
  * @author Dr Timothy C. Lethbridge
  * @version September 2014

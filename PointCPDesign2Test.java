@@ -5,7 +5,7 @@ import java.io.*;
  * This class prompts the user for a set of coordinates, and then 
  * converts them from polar to cartesian or vice-versa.
  *
- * @author Samy Abidib (#)
+ * @author Samy Abidib (6909624)
  * @author Sarmad Hashmi (7249729)
  * @author Fran&ccedil;ois B&eacute;langer
  * @author Dr Timothy C. Lethbridge

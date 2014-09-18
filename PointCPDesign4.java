@@ -4,7 +4,7 @@
  * Cartesian format. This is Design #4.
  * 
  * @author Sarmad Hashmi (7249729)
- * @author Samy Abidib (#)
+ * @author Samy Abidib (6909624)
  * @version September 2014
  */
 public class PointCPDesign4
