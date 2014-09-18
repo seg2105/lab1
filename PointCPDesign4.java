@@ -38,17 +38,23 @@ public class PointCPDesign4
   /**
    * Constructs a coordinate object and stores both types of points (polar and cartesian).
    */
-  public PointCPDesign4(double rho, double theta, double x, double y)
+  public PointCPDesign4(char type, double xOrRho, double yOrTheta)
   {
-	// check if rho theta values correspond to the correct (x,y)
-	  double xError = Math.abs((Math.cos(Math.toRadians(theta)) * rho) - x);
-	  double yError = Math.abs((Math.sin(Math.toRadians(theta)) * rho) - y);
-	  if (xError > 000000000000001 || yError > 000000000000001)		// this is because when calculating the x/y value in here, it adds decimal places (ex: 5.0 becomes 5.0000000001)
-		  throw new IllegalArgumentException();
-	  this.rho = rho;
-	  this.theta = theta;
-	  this.x = x;
-	  this.y = y;
+	  if(type != 'C' && type != 'P')
+	      throw new IllegalArgumentException();
+	  // store both coordinate systems into instance variables
+	  if (type == 'C') {
+		  this.rho = Math.sqrt(Math.pow(xOrRho, 2) + Math.pow(yOrTheta, 2));
+		  this.theta = Math.toDegrees(Math.atan2(yOrTheta, xOrRho));
+		  this.x = xOrRho;
+		  this.y = yOrTheta;
+	  }
+	  else {
+		  this.rho = xOrRho;
+		  this.theta = yOrTheta;
+		  this.x = Math.cos(Math.toRadians(yOrTheta)) * xOrRho;
+		  this.y = Math.sin(Math.toRadians(yOrTheta)) * xOrRho;
+	  }
   }
 	
   
@@ -76,7 +82,7 @@ public class PointCPDesign4
   }
   
   /**
-   * Converts Cartesian coordinates to Polar coordinates.
+   * Converts Cartesian coordinates to Polar coordinates. Not used in this design.
    */
   public void convertStorageToPolar()
   {
@@ -84,7 +90,7 @@ public class PointCPDesign4
   }
 	
   /**
-   * Converts Polar coordinates to Cartesian coordinates.
+   * Converts Polar coordinates to Cartesian coordinates. Not used in this design.
    */
   public void convertStorageToCartesian()
   {
@@ -112,27 +118,19 @@ public class PointCPDesign4
   /**
    * Rotates the specified point by the specified number of degrees.
    * Not required until E2.30
-   *
-   * @param point The point to rotate
+   * 
    * @param rotation The number of degrees to rotate the point.
    * @return The rotated image of the original point.
    */
   public PointCPDesign4 rotatePoint(double rotation)
   {
-    double radRotation = Math.toRadians(rotation);
-    double X = getX();
-    double Y = getY();
-    // get new x and y values after rotation
-    double newX = (Math.cos(radRotation) * X) - (Math.sin(radRotation) * Y);
-    double newY =  (Math.sin(radRotation) * X) + (Math.cos(radRotation) * Y); 
-    
-    
-    // return the newly rotated point after converting the new (x,y) to corresponding rho and theta
-    return new PointCPDesign4(
-    		Math.sqrt(Math.pow(newX, 2) + Math.pow(newY, 2)),
-			Math.toDegrees(Math.atan2(newY, newX)),
-			newX,
-			newY);
+	    double radRotation = Math.toRadians(rotation);
+	    double X = getX();
+	    double Y = getY();
+	        
+	    return new PointCPDesign4('C',
+	      (Math.cos(radRotation) * X) - (Math.sin(radRotation) * Y),
+	      (Math.sin(radRotation) * X) + (Math.cos(radRotation) * Y));
   }
 
   /**
