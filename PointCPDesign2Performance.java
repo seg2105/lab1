@@ -83,9 +83,9 @@ class PointCPDesign2Performance{
 			sum += (e-s);			
 		}
 
-		time = sum/(pointObjects.length)/1000;
+		time = sum/(pointObjects.length);
 
-		System.out.println("Constructor: PointCPDesign2(double rho, double theta, double x, double y) takes an average of "+time+" miliseconds per operation. MAX: "+maxTime+" miliseconds, MIN: "+minTime+" miliseconds");
+		System.out.println("Constructor: PointCPDesign2(double rho, double theta) takes an average of "+time+" miliseconds per operation. MAX: "+maxTime+" miliseconds, MIN: "+minTime+" miliseconds");
 
 		/*GetX*/
 
@@ -112,7 +112,7 @@ class PointCPDesign2Performance{
 			sum += (e-s);
 		}
 
-		time = sum/(pointObjects.length)/1000;
+		time = sum/(pointObjects.length);
 
 		System.out.println("Method: getX() takes an average of "+time+" miliseconds per operation. MAX: "+maxTime+" miliseconds, MIN: "+minTime+" miliseconds");
 
@@ -141,7 +141,7 @@ class PointCPDesign2Performance{
 			sum += (e-s);
 		}
 
-		time = sum/(pointObjects.length)/1000;
+		time = sum/(pointObjects.length);
 
 		System.out.println("Method: getY() takes an average of "+time+" miliseconds per operation. MAX: "+maxTime+" miliseconds, MIN: "+minTime+" miliseconds");
 
@@ -170,7 +170,7 @@ class PointCPDesign2Performance{
 			sum += (e-s);
 		}
 
-		time = sum/(pointObjects.length)/1000;
+		time = sum/(pointObjects.length);
 
 		System.out.println("Method: getRho() takes an average of "+time+" miliseconds per operatio miliseconds. MAX: "+maxTime+" miliseconds, MIN: "+minTime+" miliseconds");
 
@@ -199,7 +199,7 @@ class PointCPDesign2Performance{
 			sum += (e-s);
 		}
 
-		time = sum/(pointObjects.length)/1000;
+		time = sum/(pointObjects.length);
 
 		System.out.println("Method: getTheta() takes an average of "+time+" miliseconds per operation. MAX: "+maxTime+" miliseconds, MIN: "+minTime+" miliseconds");
 
@@ -233,7 +233,7 @@ class PointCPDesign2Performance{
 			sum += (e-s);
 		}
 
-		time = sum/(pointObjects.length)/1000;
+		time = sum/(pointObjects.length);
 
 		System.out.println("Method: getDistance() takes an average of "+time+" miliseconds per operation. MAX: "+maxTime+" miliseconds, MIN: "+minTime+" miliseconds");
 
@@ -264,7 +264,7 @@ class PointCPDesign2Performance{
 			sum += (e-s);
 		}
 
-		time = sum/(pointObjects.length)/1000;
+		time = sum/(pointObjects.length);
 
 		System.out.println("Method: rotatePoint() takes an average of "+time+" miliseconds per operation. MAX: "+maxTime+" miliseconds, MIN: "+minTime+" miliseconds");
 
